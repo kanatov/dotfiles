@@ -1,0 +1,49 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "5eea960"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "d896656"
+hash = "62251f94eb67648d42cdfcfb8be0fad2"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "bd3eaa5"
+hash = "92b5c58159a51c567f82b618cee2b78"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "2ad42fa"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "MasouShizuka/close-and-restore-tab"
+rev = "5047217"
+hash = "bb24648b1f96f1cef8c1543742189aad"
+
+[[plugin.deps]]
+use = "MasouShizuka/projects"
+rev = "a5e33db"
+hash = "3de26efded35814ba3e55e28f1c389a4"
+
+[[plugin.deps]]
+use = "boydaihungst/pref-by-location"
+rev = "68f006d"
+hash = "67b7a8c5d39cba04d8e3c2f3581a3ab4"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "31167ed"
+hash = "a04e157148549bacbb2831aab0e6e8cb"
+
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "3d5f847"
+hash = "9b4190e2447f2c843fee23ea5f068f6"
+
+[[flavor.deps]]
+use = "956MB/vscode-dark-plus"
+rev = "113cc48"
+hash = "fb2175ea2b78bff55fa83d0661d77407"
