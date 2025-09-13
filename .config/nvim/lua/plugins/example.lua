@@ -42,4 +42,17 @@ return {
       -- or don't set opts to use the default settings
       -- refer to the configuration section below
     }
-}}
+},
+  {
+    "erl-koenig/theme-hub.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "rktjmp/lush.nvim"
+    },
+    config = function()
+        require("theme-hub").setup({
+            -- Configuration options (see below)
+        })
+    end,
+}
+}

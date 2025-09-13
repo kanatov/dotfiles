@@ -1,0 +1,9 @@
+theme = everforest-dark
+font-size = 22
+background-opacity = .85
+background-blur = 32
+cursor-style = bar
+background = #2B3438
+window-inherit-working-directory = true
+confirm-close-surface=false
+window-save-state = always

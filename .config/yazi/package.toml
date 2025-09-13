@@ -39,11 +39,11 @@ rev = "31167ed"
 hash = "a04e157148549bacbb2831aab0e6e8cb"
 
 [[flavor.deps]]
-use = "Chromium-3-Oxide/everforest-medium"
-rev = "3d5f847"
-hash = "9b4190e2447f2c843fee23ea5f068f6"
-
-[[flavor.deps]]
 use = "956MB/vscode-dark-plus"
 rev = "113cc48"
 hash = "fb2175ea2b78bff55fa83d0661d77407"
+
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "0158f0f"
+hash = "dbbbfe681e156c28303efb1f44b6cbc4"
