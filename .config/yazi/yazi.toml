@@ -1,16 +1,13 @@
-# yazi.toml
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
 ratio          = [ 1, 5, 3 ]
-sort_by        = "extension"
+sort_by        = "natural"
 sort_sensitive = false
 sort_reverse 	 = false
 sort_dir_first = true
 sort_translit  = false
-linemode       = "none"
+linemode       = "btime"
 show_hidden    = true
 show_symlink   = true
 scrolloff      = 5
@@ -49,12 +46,13 @@ reveal = [
 	{ run = '''clear; exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 extract = [
-	{ run = '/Applications/Keka.app/Contents/MacOS/Keka 7z --cli "$@"', desc = "Extract here", for = "unix" },
 	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
+	{ run = 'ya pub extract --list "$@"',   desc = "Extract here", for = "unix" },
 ]
 play = [
 	{ run = 'vlc "$@"', orphan = true, for = "unix" },
 	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+  { run = 'ffplay -autoexit -fs "$@"', orphan = true, for = "unix", block = true},
 	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
@@ -94,7 +92,10 @@ suppress_preload = false
 fetchers = [
 	# Mimetype
 	{ id = "mime", name = "*", run = "mime", prio = "high" },
+    { id = "simple-tag", name = "*", run = "simple-tag" },
+    { id = "simple-tag", name = "*/", run = "simple-tag" },
 ]
+
 spotters = [
 	{ name = "*/", run = "folder" },
 	# Code

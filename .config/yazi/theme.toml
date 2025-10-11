@@ -1,10 +1,4 @@
-# If the user's terminal is in dark mode, Yazi will load `theme-dark.toml` on startup; otherwise, `theme-light.toml`.
-# You can override any parts of them that are not related to the dark/light mode in your own `theme.toml`.
-
-# If you want to dynamically override their content based on dark/light mode, you can specify two different flavors
-# for dark and light modes under `[flavor]`, and do so in those flavors instead.
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
-
 
 # : File-specific styles {{{
 
@@ -13,7 +7,7 @@ rules = [
 	# archive
 	{ name = "*.{zip,rar,7z*,iso,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*,bin,img,tgz}", fg = "#FFC038" },
 	# video
-	{ name = "*.{3gp,avif,avi,m4v,mkv,mov,mp4,mts,webm,wmv}", fg = "#FF64CE" },
+	{ name = "*.{3gp,avif,avi,m4v,mkv,mov,mp4,mts,webm,wmv,mpg}", fg = "#FF64CE" },
 
 	# audio
 	{ name = "*.{aac,flac,m4a,mp3,ogg,wav}", fg = "#FF3845" },
@@ -265,6 +259,7 @@ exts = [
 	{ name = "mts", text = "", fg = "#FF38C0" },
 	{ name = "webm", text = "", fg = "#FF38C0" },
 	{ name = "wmv", text = "", fg = "#FF38C0" },
+	{ name = "mpg", text = "", fg = "#FF38C0" },
 
 	# archive
 	{ name = "7z", text = "", fg = "#FFC038" },

@@ -33,6 +33,11 @@ use = "boydaihungst/pref-by-location"
 rev = "68f006d"
 hash = "67b7a8c5d39cba04d8e3c2f3581a3ab4"
 
+[[plugin.deps]]
+use = "boydaihungst/simple-tag"
+rev = "ebcbc9e"
+hash = "fc8d977f168df8ac6db8b5c1167ec777"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "31167ed"

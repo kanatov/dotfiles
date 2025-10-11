@@ -1,5 +1,3 @@
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [mgr]
@@ -166,6 +164,66 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 ]
 
+prepend_keymap = [
+  # Tagging plugin
+
+  #─────────────────────────── TOGGLE TAG(S) ────────────────────────────
+  { on = [ "e", "t", "k" ], run = "plugin simple-tag -- toggle-tag", desc = "Toggle a tag (press any key)" },
+  { on = [ "`" ], run = "plugin simple-tag -- toggle-tag --key=*", desc = "Toggle tag with fixed tag key = *" },
+ { on = [ "e", "t", "i" ], run = "plugin simple-tag -- toggle-tag --input", desc = "Toggle tag(s) with value from (input box)" },
+  { on = [ "e", "a", "k" ], run = "plugin simple-tag -- add-tag", desc = "Add a tag (press any key)" },
+  { on = [ "e", "a", "i" ], run = "plugin simple-tag -- add-tag --input", desc = "Add tag(s) with value from (input box)" },
+  { on = [ "e", "d", "k" ], run = "plugin simple-tag -- remove-tag", desc = "Remove a tag (press any key)" },
+
+ { on = [ "e", "r", "k" ], run = "plugin simple-tag -- replace-tag", desc = "Replace with a new tag (press any key)" },
+
+  # Fast Replace tag(s) with fixed keys=!1q. key=!1q tag=!1q or tags=!1q also work
+  { on = [ "e", "r", "f" ], run = "plugin simple-tag -- replace-tag --keys=!1q", desc = "Replace tag(s) with fixed tag keys = (! and 1 and q)" },
+  { on = [ "e", "r", "f" ], run = "plugin simple-tag -- replace-tag --keys=*", desc = "Replace tag(s) with fixed tag key = *" },
+  { on = [ "e", "r", "f" ], run = "plugin simple-tag -- replace-tag --key=*", desc = "Replace tag(s) with fixed tag key = *" },
+
+  # Replace tag(s) with value from input box.
+  # A tag hint window and an input box will show up.
+  # Simply input new tag key(s) for selected or hovered files/folders.
+  # Do not input any delimiter.
+  { on = [ "e", "r", "i" ], run = "plugin simple-tag -- replace-tag --input", desc = "Replace tag(s) with value from (input box)" },
+  { on = [ "e", "e" ], run = "plugin simple-tag -- edit-tag ", desc = "Edit tag(s) (input box)" },
+  { on = [ "e", "c" ], run = "plugin simple-tag -- clear", desc = "Clear all tags from selected or hovered files" },
+  { on = [ "e", "u", "s" ], run = "plugin simple-tag -- toggle-ui", desc = "Toggle tag indicator (icon > tag key > hidden)" },
+  { on = [ "e", "u", "h" ], run = "plugin simple-tag -- toggle-ui --mode=hidden", desc = "Hide all tags indicator" },
+
+  { on = [ "e", "f" ], run = "plugin simple-tag -- filter", desc = "Filter files/folders by a tag (press any key)" },
+  { on = [ "e", "F" ], run = "plugin simple-tag -- filter --input", desc = "Filter files/folders by tag(s) (input box)" },
+  { on = [ "e", "s", "t" ], run = "plugin simple-tag -- toggle-select", desc = "Select a selection action then select a tag key (toggle-select)" },
+  # fixed tag(s). --keys=!1q or --key=!1q or --tag=!1q or --tags=!1q. They are the same.
+  { on = [ "e", "s", "t" ], run = "plugin simple-tag -- toggle-select --keys=!1q", desc = "" },
+
+  # Run action on files/folders by a tag.
+  # A tag hint window will show up.
+  # Simply press any tag key to do the folowing action:
+  { on = [ "e", "s", "r" ], run = "plugin simple-tag -- replace-select", desc = "replace-select" },
+  { on = [ "e", "s", "u" ], run = "plugin simple-tag -- unite-select", desc = "unite-select" },
+  { on = [ "e", "s", "i" ], run = "plugin simple-tag -- intersect-select", desc = "intersect-select" },
+  { on = [ "e", "s", "s" ], run = "plugin simple-tag -- subtract-select", desc = "subtract-select" },
+  { on = [ "e", "s", "e" ], run = "plugin simple-tag -- exclude-select", desc = "exclude-select" },
+  # Run action on files/folders by fixed tag(s). --keys=!1q or --key=!1q or --tag=!1q or --tags=!1q. They are the same.
+  { on = [ "e", "s", "e" ], run = "plugin simple-tag -- replace-select --keys=!1q", desc = "Replaces the current selection list with files/folders that have (! and 1 and q) tag(s)" },
+
+  # Run action on files/folders by tag(s) with value from input box.
+  # A tag hint window will show up.
+  # Simply input tag key(s) to do the folowing action:
+  { on = [ "e", "s", "R" ], run = "plugin simple-tag -- replace-select --input", desc = "replace-select --input" },
+  { on = [ "e", "s", "U" ], run = "plugin simple-tag -- unite-select --input", desc = "unite-select --input" },
+  { on = [ "e", "s", "I" ], run = "plugin simple-tag -- intersect-select --input", desc = "intersect-select --input" },
+  { on = [ "e", "s", "S" ], run = "plugin simple-tag -- subtract-select --input", desc = "subtract-select --input" },
+  { on = [ "e", "s", "E" ], run = "plugin simple-tag -- exclude-select --input", desc = "exclude-select --input" },
+  # it also support --mode=or when using with --input or --keys=!1q or --key=!1q or --tag=!1q or --tags=!1q
+  { on = [ "e", "s", "R" ], run = "plugin simple-tag -- replace-select --input --mode=or", desc = "replace-select --input --mode=or" },
+  { on = [ "e", "s", "R" ], run = "plugin simple-tag -- replace-select --keys=!1q --mode=or", desc = "replace-select --keys=!1q --mode=or" },
+
+  # Undo/Redo selection (only works after using 5 modes above)
+  { on = [ "e", "s", "u" ], run = "plugin simple-tag -- undo-select", desc = "Undos/Redos the last selection action" },
+]
 [tasks]
 
 keymap = [

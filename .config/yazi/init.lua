@@ -56,3 +56,21 @@ require("pref-by-location"):setup({
 		show_hidden = true,
 	},
 })
+
+require("simple-tag"):setup({
+	ui_mode = "icon",
+	hints_disabled = false,
+	linemode_order = 500,
+	colors = {
+		reversed = true,
+		["*"] = "gold",
+		["!"] = "#cc9057",
+	},
+
+	icons = {
+		default = "󰚋",
+		["*"] = "",
+		["!"] = "",
+		["b"] = "",
+	},
+})

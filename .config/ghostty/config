@@ -1,9 +1,11 @@
 theme = everforest-dark
 font-size = 22
-background-opacity = .85
-background-blur = 32
+background-opacity = .94
+background-blur = 64
 cursor-style = bar
-background = #2B3438
+background = #262E31
 window-inherit-working-directory = true
 confirm-close-surface=false
 window-save-state = always
+keybind = cmd+a=select_all
+
